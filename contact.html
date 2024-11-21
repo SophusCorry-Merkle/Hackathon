@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Contact Us</h1>
+    <p>Phone number</p>
+    <p>+45 12 34 56 78</p>
+
+
+    <form action="#" method="POST">
+        <label for="bugReport">Bug report description:</label>
+        <br><br>
+        <textarea id="bugReport" name="bugReport" rows="5" cols="40"></textarea>
+        <br><br>
+
+        <button type="submit" id="submitButton" disabled >Submit</button>
+    </form>
+    <script>
+        const bugReportField = document.getElementById('bugReport');
+        const submitButton = document.getElementById('submitButton');
+
+        function validateBugReport() {
+            const bugReport = bugReportField.value.trim();
+
+            if (bugReport) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        bugReportField.addEventListener('input', validateBugReport);
+    </script>
+</main>
+
+<footer>
+    <p>&copy; 2024 Hackathon Challenge. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

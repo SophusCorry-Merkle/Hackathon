@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+    <script src="script.js" ></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Welcome to the Hackathon Challenge</h1>
+    <p>Find and fix as many bugs as possible before the time runs out.</p>
+
+    <form action="#" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <br><br>
+
+        <button type="submit" id="submitButton" disabled>Submit</button>
+    </form>
+
+    <script>
+
+        const usernameField = document.getElementById('username');
+        const emailField = document.getElementById('email');
+        const submitButton = document.getElementById('submitButton');
+
+        function validateForm() {
+            const username = usernameField.value.trim();
+            const email = emailField.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (username && emailPattern.test(email)) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        usernameField.addEventListener('input', validateForm);
+        emailField.addEventListener('input', validateForm);
+    </script>
+</main>
+
+<footer>
+    <p>&copy; 2024 Hackathon Challenge. All rights reserved.</p>
+</footer>
+</body>
+</html>
